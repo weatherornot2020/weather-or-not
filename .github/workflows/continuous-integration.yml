@@ -1,10 +1,10 @@
 name: Continuous Deployment
 
 on:
-    pull_request:
-        types: [closed]
-        branches:
-          - master
+  pull_request:
+    types: [closed]
+    branches:
+      - master
 
 jobs:
   buildAndTest:
