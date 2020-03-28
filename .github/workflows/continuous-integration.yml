@@ -17,6 +17,14 @@ jobs:
         if: github.event.pull_request.merged == true
         run: yarn
 
-      - name: Build and Deploy
+      - name: Build
         if: github.event.pull_request.merged == true
-        run: yarn deploy
+        run: yarn build
+
+      - name: Deploy
+        if: github.event.pull_request.merged == true
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: master # deploying branch
