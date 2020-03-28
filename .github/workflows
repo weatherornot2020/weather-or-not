@@ -1,0 +1,22 @@
+name: Continuous Deployment
+
+on:
+    pull_request:
+        types: [closed]
+        branches:
+          - master
+
+jobs:
+  buildAndTest:
+    name: Deploy on Merge
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Install Dependencies
+        if: github.event.pull_request.merged == true
+        run: yarn
+
+      - name: Build and Deploy
+        if: github.event.pull_request.merged == true
+        run: yarn deploy
