@@ -9,7 +9,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Welcome to Weather or Not!</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload (in dev mode).
+          Edit <code>src/App.js</code> and save to reload (if in dev mode).
         </p>
         <a
           className="App-link"
