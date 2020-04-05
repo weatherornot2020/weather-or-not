@@ -20,6 +20,8 @@ jobs:
       - name: Build
         if: github.event.pull_request.merged == true
         run: yarn build
+        env:
+          REACT_APP_WEATHER_API_KEY: ${{ secrets.REACT_APP_WEATHER_API_KEY }}
 
       - name: Deploy
         if: github.event.pull_request.merged == true
