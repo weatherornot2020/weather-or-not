@@ -39,6 +39,7 @@ export const WeatherDisplay = (props) => {
         <h2>{props.weatherData.name}</h2>
         <img
           src={`http://openweathermap.org/img/wn/${weatherInfo.icon}@2x.png`}
+          alt="weather icon"
         />
         <span className={"weather-desc"}>{weatherInfo.description}</span>
         <br />
