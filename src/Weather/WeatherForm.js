@@ -12,7 +12,7 @@ export const WeatherForm = (props) => {
 
   const fetchWeatherData = () => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?zip=${zip},${countryCode}&appid=${apiKey}`
+      `https://api.openweathermap.org/data/2.5/weather?zip=${zip},${countryCode}&appid=${apiKey}&units=imperial`
     )
       .then(async (res) => {
         const data = await res.json();
