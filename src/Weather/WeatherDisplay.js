@@ -10,7 +10,6 @@ import {
   Smile,
 } from "react-feather";
 import FadeIn from "react-fade-in";
-import { kToF } from "../util/kToF";
 
 function pad(num) {
   return ("0" + num).slice(-2);
@@ -46,12 +45,12 @@ export const WeatherDisplay = (props) => {
         <br />
         <div>
           <Thermometer />
-          {kToF(props.weatherData.main.temp)}&deg;F
+          {props.weatherData.main.temp}&deg;F
           <br />
-          <Smile /> Feels like {kToF(props.weatherData.main.feels_like)}&deg;F
+          <Smile /> Feels like {props.weatherData.main.feels_like}&deg;F
           <br />
-          <ArrowUpCircle /> {kToF(props.weatherData.main.temp_max)}&deg;F |{" "}
-          <ArrowDownCircle /> {kToF(props.weatherData.main.temp_min)}&deg;F
+          <ArrowUpCircle /> {props.weatherData.main.temp_max}&deg;F |{" "}
+          <ArrowDownCircle /> {props.weatherData.main.temp_min}&deg;F
         </div>
         <div>
           <Wind />
