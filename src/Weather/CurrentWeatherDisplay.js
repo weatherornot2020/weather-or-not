@@ -10,21 +10,9 @@ import {
   Smile,
 } from "react-feather";
 import FadeIn from "react-fade-in";
+import { getTimeFromDate } from "../util";
 
-function pad(num) {
-  return ("0" + num).slice(-2);
-}
-function getTimeFromDate(timestamp) {
-  var date = new Date(timestamp * 1000);
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var seconds = date.getSeconds();
-  const ampm = hours >= 12 ? "PM" : "AM";
-  if (hours > 12) hours = hours - 12;
-  return pad(hours) + ":" + pad(minutes) + ":" + pad(seconds) + ampm;
-}
-
-export const WeatherDisplay = (props) => {
+export const CurrentWeatherDisplay = (props) => {
   if (
     props.weatherData &&
     props.weatherData.weather &&
@@ -33,9 +21,6 @@ export const WeatherDisplay = (props) => {
     const weatherInfo = props.weatherData.weather[0];
     return (
       <FadeIn>
-        <div>
-          temporary for testing: {JSON.stringify(props.weatherData, null, 2)}
-        </div>
         <h2>{props.weatherData.name}</h2>
         <img
           src={`http://openweathermap.org/img/wn/${weatherInfo.icon}@2x.png`}
@@ -72,6 +57,6 @@ export const WeatherDisplay = (props) => {
   }
 };
 
-WeatherDisplay.propTypes = {
+CurrentWeatherDisplay.propTypes = {
   weatherData: PropTypes.object,
 };
