@@ -17,7 +17,16 @@ export const WeatherForm = (props) => {
       .then(async (res) => {
         const data = await res.json();
         console.log(data);
-        props.setWeatherData(data);
+        props.setCurrentWeatherData(data);
+      })
+      .then(() => {
+        fetch(
+          `https://api.openweathermap.org/data/2.5/forecast?zip=${zip},${countryCode}&appid=${apiKey}&units=imperial`
+        ).then(async (res) => {
+          const data = await res.json();
+          console.log(data);
+          props.setForecastData(data);
+        });
       })
       .catch((e) => console.log(e));
   };
@@ -52,5 +61,6 @@ export const WeatherForm = (props) => {
 };
 
 WeatherForm.propTypes = {
-  setWeatherData: PropTypes.func.isRequired,
+  setCurrentWeatherData: PropTypes.func.isRequired,
+  setForecastData: PropTypes.func.isRequired,
 };
