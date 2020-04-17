@@ -36,10 +36,10 @@ export const WeatherForm = (props) => {
 
   return (
     <>
-      <label htmlFor="zipcode">
+      <label htmlFor="zipcode" className="Weather-zipcode">
         Search:
-        <br />
         <input
+          className="Weather-input"
           type="text"
           id="zipcode"
           name="zipcode"
@@ -56,9 +56,8 @@ export const WeatherForm = (props) => {
         />
       </label>
       <button icon="refresh" onClick={fetchWeatherData}>
-        <img src={magglass} className="App-search"></img>
+        <img src={magglass} className="Weather-search"></img>
       </button>
-      <br />
       <br />
       <span style={{ color: "red" }}>{error}</span>
     </>

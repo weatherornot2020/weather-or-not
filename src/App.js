@@ -12,13 +12,13 @@ function App() {
           <li>
             <img src={logo} className="App-logo" alt="logo" />
           </li>
-          <li>
+          <li className="App-center">
             <h1>Weather or Not</h1>
           </li>
-          <li>
+          <li className="App-login">
             <div class="dropdown">
               <span>
-                <img src={login} className="App-login" alt="login" />
+                <img src={login} className="App-login2" alt="login" />
               </span>
               <div class="dropdown-content">
                 <a href="#">Login</a>
