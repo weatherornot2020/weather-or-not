@@ -1,10 +1,13 @@
 import React from "react";
 import logo from "./logo.png";
-import login from "./login.png";
 import "./App.css";
 import { Weather } from "./Weather/Weather";
+import { AccountForm } from "./AccountForm/AccountForm";
+import login from "./login.png";
 
 function App() {
+  const [user, setUser] = React.useState();
+
   return (
     <div className="App">
       <header className="App-header">
@@ -12,23 +15,22 @@ function App() {
           <li>
             <img src={logo} className="App-logo" alt="logo" />
           </li>
-          <li className="App-center">
-            <h1>Weather or Not</h1>
-          </li>
+          <li className="App-center"></li>
           <li className="App-login">
-            <div class="dropdown">
+            <div className="dropdown">
               <span>
                 <img src={login} className="App-login2" alt="login" />
               </span>
-              <div class="dropdown-content">
-                <a href="#">Login</a>
+              <div className="dropdown-content">
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                <AccountForm user={user} setUser={setUser} />
               </div>
             </div>
           </li>
         </ul>
       </header>
       <body className="App-body">
-        <Weather className="App-weather" />
+        <Weather className="App-weather" user={user} />
       </body>
     </div>
   );
