@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { Search } from "react-feather";
+import magglass from "./Search.png";
+import "./Weather.css";
 
 export const WeatherForm = (props) => {
   const [zip, setZip] = useState();
@@ -33,14 +36,14 @@ export const WeatherForm = (props) => {
 
   return (
     <>
-      <label htmlFor="zipcode">
-        Zip Code:
-        <br />
+      <label htmlFor="zipcode" className="Weather-zipcode">
+        Search:
         <input
+          className="Weather-input"
           type="text"
           id="zipcode"
           name="zipcode"
-          placeholder="enter weather data"
+          placeholder="Enter your zip code"
           onChange={(event) => {
             if (!isNaN(event.target.value)) {
               setError(null);
@@ -52,8 +55,9 @@ export const WeatherForm = (props) => {
           }}
         />
       </label>
-      <br />
-      <button onClick={fetchWeatherData}>Find Weather Data</button>
+      <button icon="refresh" onClick={fetchWeatherData}>
+        <img src={magglass} className="Weather-search"></img>
+      </button>
       <br />
       <span style={{ color: "red" }}>{error}</span>
     </>

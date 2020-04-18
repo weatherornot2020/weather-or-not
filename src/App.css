@@ -1,29 +1,60 @@
-.App {
-  background-color: #282c34;
+li {
+  float: left;
+}
+.App-navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #152b58;
+  color: white;
+  padding: 1%;
 }
 
+/* logomakr.com/7BZ0V8 */
 .App-logo {
-  height: 40vmin;
-  position: absolute;
-  padding-left: 10%;
+  height: 15vmin;
 }
 
-h1 {
-  text-align: center;
+.App-center {
+  padding-left: 22%;
+}
+
+.App-login {
+  float: right;
+}
+
+.App-login2 {
+  height: 15vmin;
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 50px;
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .App-header {
   font-size: calc(10px + 2vmin);
-  color: white;
-  padding-top: 2%;
 }
 
 .App-body {
-  text-align: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  padding-bottom: 26%;
-  padding-top: 3%;
+  padding-bottom: 30%;
+  padding-top: 1%;
+  background-color: #5c6473;
 }
 
 .hourly-weather {
