@@ -1,8 +1,7 @@
 import React from "react";
 import userbase from "userbase-js";
 
-export const AccountForm = () => {
-  const [user, setUser] = React.useState();
+export const AccountForm = ({ user, setUser }) => {
   const [response, setReponse] = React.useState();
   const [error, setError] = React.useState();
   const [username, setUsername] = React.useState();
@@ -18,7 +17,7 @@ export const AccountForm = () => {
     userbase
       .init({ appId: process.env.REACT_APP_USERBASE_APP_ID })
       .then((session) => session.user && setUser(session.user));
-  }, []);
+  }, [setUser]);
 
   if (!user && !response && !error) {
     return (
@@ -77,7 +76,6 @@ export const AccountForm = () => {
             !(password.length >= 8)
           }
           onClick={() => {
-            console.log(username, password, verification);
             if (showRegister) {
               userbase
                 .signUp({ username, password, rememberMe: "local" })

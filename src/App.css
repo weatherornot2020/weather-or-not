@@ -1,29 +1,69 @@
-.App {
-  background-color: #282c34;
+li {
+  float: left;
+}
+.App-navbar {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  background-color: #444a54;
+  color: white;
+  padding: 1%;
+  display: flex;
 }
 
+/* logomakr.com/7BZ0V8 */
 .App-logo {
-  height: 40vmin;
-  position: absolute;
-  padding-left: 10%;
+  float: left;
+  max-width: 80px;
+  margin: 10px;
 }
 
-h1 {
-  text-align: center;
+.App-login {
+  float: right;
+  margin: 12px;
+}
+
+.App-login2 {
+  max-width: 30px;
+  color: white;
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 50px;
+  padding: 12px 16px;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  margin-left: -250px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .App-header {
   font-size: calc(10px + 2vmin);
-  color: white;
-  padding-top: 2%;
+}
+
+.App-center {
+  flex-grow: 1;
 }
 
 .App-body {
-  text-align: center;
+  padding-top: 2%;
+}
+
+body {
   font-size: calc(10px + 2vmin);
   color: white;
-  padding-bottom: 26%;
-  padding-top: 3%;
+  padding-bottom: 30%;
+  background-color: #5c6473;
 }
 
 .hourly-weather {
@@ -33,7 +73,6 @@ h1 {
 }
 
 .hourly-weather-container {
-  overflow-x: scroll;
   white-space: nowrap;
 }
 
@@ -51,4 +90,8 @@ h1 {
   border-radius: 10px;
   background-color: #5c6473;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.current-weather-data > div {
+  text-align: center;
 }
