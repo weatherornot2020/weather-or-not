@@ -41,6 +41,7 @@ li {
   background-color: rgba(255, 255, 255, 0.5);
   color: black;
   margin-left: -250px;
+  backdrop-filter: blur(4px);
 }
 
 .dropdown:hover .dropdown-content {
