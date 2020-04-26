@@ -96,3 +96,29 @@ body {
 .current-weather-data > div {
   text-align: center;
 }
+
+.weather-form {
+  text-align: center;
+}
+
+#zipcode {
+  background: rgb(68, 74, 84);
+  background: radial-gradient(
+    ellipse at bottom,
+    rgba(68, 74, 84, 1) 2%,
+    rgba(92, 100, 115, 1) 98%
+  );
+  border: none;
+  border-bottom: 2px solid rgba(68, 74, 84, 1);
+  color: white;
+  padding: 5px;
+  font-size: 20pt;
+  text-align: center;
+}
+#zipcode:focus {
+  outline: none;
+}
+#zipcode::placeholder {
+  color: #bbb;
+  text-align: center;
+}

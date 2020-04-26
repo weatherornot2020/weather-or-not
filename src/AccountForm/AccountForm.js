@@ -8,39 +8,19 @@ export const AccountForm = ({ user, setUser }) => {
   const [password, setPassword] = React.useState();
   const [verification, setVerification] = React.useState();
 
-  const [showRegister, setShowRegister] = React.useState();
-
-  const registerClassname = showRegister ? "selected" : "deselected";
-  const signinClassname = showRegister ? "deselected" : "selected";
-
   React.useEffect(() => {
     userbase
       .init({ appId: process.env.REACT_APP_USERBASE_APP_ID })
       .then((session) => session.user && setUser(session.user));
   }, [setUser]);
 
-  if (!user && !response && !error) {
+  if (!user && !response) {
     return (
       <div className={"account-form"}>
-        <div>
-          <span
-            className={registerClassname}
-            onClick={() => {
-              if (!showRegister) setShowRegister(true);
-            }}
-          >
-            Create Account
-          </span>
-          &nbsp;|&nbsp;
-          <span
-            className={signinClassname}
-            onClick={() => {
-              if (showRegister) setShowRegister(false);
-            }}
-          >
-            Sign In
-          </span>
-        </div>
+        <div>Account</div>
+        {error && (
+          <p style={{ color: "red" }}>{error.message} Please try again.</p>
+        )}
         <label htmlFor="uname">
           Username:{" "}
           <input
@@ -53,6 +33,7 @@ export const AccountForm = ({ user, setUser }) => {
           Password:{" "}
           <input
             id="password"
+            type="password"
             onChange={(event) => setPassword(event.target.value)}
           />{" "}
           {password &&
@@ -76,20 +57,29 @@ export const AccountForm = ({ user, setUser }) => {
             !(password.length >= 8)
           }
           onClick={() => {
-            if (showRegister) {
-              userbase
-                .signUp({ username, password, rememberMe: "local" })
-                .then((user) => setUser(user))
-                .catch(setError);
-            } else {
-              userbase
-                .signIn({ username, password, rememberMe: "local" })
-                .then((user) => setUser(user))
-                .catch(setError);
-            }
+            userbase
+              .signUp({ username, password, rememberMe: "local" })
+              .then((user) => setUser(user))
+              .catch(setError);
           }}
         >
-          {showRegister ? "Register" : "Sign In"}
+          Register
+        </button>
+        <button
+          disabled={
+            !username ||
+            !password ||
+            !(verification === "real") ||
+            !(password.length >= 8)
+          }
+          onClick={() => {
+            userbase
+              .signIn({ username, password, rememberMe: "local" })
+              .then((user) => setUser(user))
+              .catch(setError);
+          }}
+        >
+          Sign In
         </button>
       </div>
     );

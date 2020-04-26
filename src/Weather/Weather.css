@@ -1,7 +1,41 @@
 .Weather-search {
-  height: 2vmin;
+  height: 5vmin;
 }
 
 .Weather-zipcode {
   margin-left: 0.5%;
+}
+
+.saved-zips {
+  overflow-x: scroll;
+  white-space: nowrap;
+  margin-bottom: 20px;
+}
+.saved-zips::-webkit-scrollbar {
+  width: 12px;
+}
+.saved-zips::-webkit-scrollbar-track {
+  background-color: white;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: solid 3px transparent;
+}
+.saved-zips::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #5c6473;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.saved-zips > button {
+  margin: 2px 2px 6px;
+  padding: 25px 15px;
+  background-color: #535b69;
+  border: none;
+  border-right: 1px solid #282c34;
+  border-bottom: 3px solid #282c34;
+}
+
+h4 {
+  text-align: left;
+  margin-left: 3vw;
 }

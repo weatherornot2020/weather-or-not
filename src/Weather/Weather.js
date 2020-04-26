@@ -3,7 +3,7 @@ import { CurrentWeatherDisplay } from "./CurrentWeatherDisplay";
 import { WeatherForm } from "./WeatherForm";
 import { FutureHour } from "./FutureHour";
 
-export const Weather = ({ user }) => {
+export const Weather = ({ user, setUser }) => {
   const [weatherData, setWeatherData] = useState();
   const [forecastData, setForecastData] = useState();
 
@@ -14,6 +14,7 @@ export const Weather = ({ user }) => {
           setCurrentWeatherData={setWeatherData}
           setForecastData={setForecastData}
           user={user}
+          setUser={setUser}
         />
       </section>
       <section className={"current-weather-data"}>
