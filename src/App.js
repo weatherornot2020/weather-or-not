@@ -7,7 +7,7 @@ import login from "./login.png";
 
 function App() {
   const [user, setUser] = React.useState();
-
+  console.log(process.env.REACT_APP_DEVELOPMENT);
   return (
     <div className="App">
       <header className="App-header">
@@ -30,7 +30,7 @@ function App() {
         </ul>
       </header>
       <body className="App-body">
-        <Weather className="App-weather" user={user} />
+        <Weather className="App-weather" user={user} setUser={setUser} />
       </body>
     </div>
   );
