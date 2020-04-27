@@ -137,7 +137,10 @@ export const WeatherForm = (props) => {
         <img src={magglass} className="Weather-search" alt="search button" />
       </button> */}
       <br />
-      <span style={{ color: "red" }}>{error}</span>
+      <br />
+      <span className="Weather-error" style={{ color: "red" }}>
+        {error}
+      </span>
     </>
   );
 };

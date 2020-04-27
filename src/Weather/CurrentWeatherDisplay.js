@@ -22,7 +22,7 @@ export const CurrentWeatherDisplay = (props) => {
     const weatherInfo = props.weatherData.weather[0];
     return (
       <FadeIn>
-        <h2>{props.weatherData.name}</h2>
+        <h2 className="Weather-location">{props.weatherData.name}</h2>
         <group className="Weather-current">
           <h3>Current Weather</h3>
           <img

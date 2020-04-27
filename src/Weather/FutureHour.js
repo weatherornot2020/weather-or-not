@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import FadeIn from "react-fade-in";
 import { getPrettyDayOfMonth, getPrettyTime } from "../util";
+import "./Weather.css";
 
 export const FutureHour = (props) => {
   if (
