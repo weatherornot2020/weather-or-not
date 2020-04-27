@@ -53,17 +53,17 @@ span {
   float: left;
   padding-left: 1%;
   padding-right: 1%;
-  background-color: #274175;
+  /* background-color: #274175; */
 }
 
 .Weather-error {
   float: left;
 }
 
-.hourly-weather-container {
+/* .hourly-weather-container {
   background-image: linear-gradient(to right, #274175, #45a4db);
   padding-bottom: 5px;
-}
+} */
 
 main {
   margin-left: 2%;
