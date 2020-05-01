@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import magglass from "./Search.png";
 import "./Weather.css";
 import userbase from "userbase-js";
 import { SavedZips } from "./SavedZips";
@@ -134,11 +133,14 @@ export const WeatherForm = (props) => {
           }
         }}
       />
-      <button icon="refresh" onClick={fetchWeatherData}>
+      {/* <button icon="refresh" onClick={fetchWeatherData}>
         <img src={magglass} className="Weather-search" alt="search button" />
-      </button>
+      </button> */}
       <br />
-      <span style={{ color: "red" }}>{error}</span>
+      <br />
+      <span className="Weather-error" style={{ color: "red" }}>
+        {error}
+      </span>
     </>
   );
 };

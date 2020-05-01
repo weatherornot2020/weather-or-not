@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { CurrentWeatherDisplay } from "./CurrentWeatherDisplay";
 import { WeatherForm } from "./WeatherForm";
 import { FutureHour } from "./FutureHour";
+import "./Weather.css";
 
 export const Weather = ({ user, setUser }) => {
   const [weatherData, setWeatherData] = useState();

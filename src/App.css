@@ -63,8 +63,9 @@ li {
 body {
   font-size: calc(10px + 2vmin);
   color: white;
-  padding-bottom: 30%;
   background-color: #5c6473;
+  padding-bottom: 10px;
+  background-image: linear-gradient(to right, #274175, #45a4db);
 }
 
 .hourly-weather {
