@@ -12,7 +12,6 @@ import {
 import FadeIn from "react-fade-in";
 import { getTimeFromDate } from "../util";
 import "./Weather.css";
-import Symbols from "./Symbols/light rain.png";
 
 export const CurrentWeatherDisplay = (props) => {
   if (
@@ -26,7 +25,10 @@ export const CurrentWeatherDisplay = (props) => {
         <h2 className="Weather-location">{props.weatherData.name}</h2>
         <group className="Weather-current">
           <h3>Current Weather</h3>
-          <img src={Symbols} alt="weather icon" />
+          <img
+            src={`http://openweathermap.org/img/wn/${weatherInfo.icon}.png`}
+            alt="weather icon"
+          />
           <br />
           <span className={"weather-desc"}>{weatherInfo.description}</span>
           <br />
