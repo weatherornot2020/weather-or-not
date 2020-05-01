@@ -32,6 +32,7 @@ export const CurrentWeatherDisplay = (props) => {
           <br />
           <span className={"weather-desc"}>{weatherInfo.description}</span>
           <br />
+          <br />
           <div>
             <Thermometer />
             {props.weatherData.main.temp}&deg;F
