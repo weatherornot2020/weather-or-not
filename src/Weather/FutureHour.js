@@ -17,7 +17,7 @@ export const FutureHour = (props) => {
         <h3>{getPrettyDayOfMonth(props.weatherData.dt)}</h3>
         <h3>{getPrettyTime(props.weatherData.dt)}</h3>
         <img
-          src={`http://openweathermap.org/img/wn/${weatherInfo.icon}.png`}
+          src={`https://openweathermap.org/img/wn/${weatherInfo.icon}.png`}
           alt="weather icon"
         />
         <span className={"weather-desc"}>{weatherInfo.description}</span>
