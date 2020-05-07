@@ -26,7 +26,7 @@ export const CurrentWeatherDisplay = (props) => {
         <group className="Weather-current">
           <h3>Current Weather</h3>
           <img
-            src={`http://openweathermap.org/img/wn/${weatherInfo.icon}.png`}
+            src={`https://openweathermap.org/img/wn/${weatherInfo.icon}.png`}
             alt="weather icon"
           />
           <br />
